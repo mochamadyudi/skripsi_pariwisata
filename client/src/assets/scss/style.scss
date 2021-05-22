@@ -1,0 +1,85 @@
+/**
+ * @author - Mochamad Yudi Sobari
+ * @version - v.0.0.1
+ * @email - myudisobari12@gmail.com
+ * @desc - Skripsi pariwisata kabupaten karawang.
+ */
+
+/**--------------------------------------------------------------------
+ * TABLE OF CONTENT
+ *
+ # Settings
+ ## Maping
+ ## Mixin
+ ## Normalize
+ ## Structure
+  --- break ---
+
+ # Site
+ ## Primary
+ ## Secondary
+
+ --- break ---
+
+ # Base
+ ## Scaffolding
+ ## Typography
+
+ --- break --
+
+ # Element
+ ## Alert
+ ## Button
+ ## Cards
+ ## Footer
+ ## Form
+ ## Headers
+ ## Inputs
+ ## Panel
+ ## Sidebar
+ ## Tabs
+ ## Tooltips
+
+ --- break ---
+
+ # Navigation
+ ## Links
+ ## Menus
+
+ ----------------------------------------------------------------------*/
+@import "settings/material-color";
+@import "settings/structure";
+@import "settings/maping";
+@import "settings/mixin";
+@import "settings/normalize";
+
+
+@import "site/primary/primary";
+@import "site/secondary/secondary";
+
+@import "base/Admin";
+@import "base/position";
+@import "base/typography";
+@import "base/display";
+@import "base/scaffolding";
+
+@import "navigation/menus";
+@import "navigation/links";
+
+@import "element/alert";
+@import "element/btn";
+@import "element/loading";
+@import "element/jumbotron";
+@import "element/modal";
+@import "element/container";
+@import "element/selects";
+@import "element/collapse";
+@import "element/cards";
+@import "element/footer";
+@import "element/form";
+@import "element/headers";
+@import "element/inputs";
+@import "element/panel";
+@import "element/sidebar";
+@import "element/tabs";
+@import "element/tooltips";

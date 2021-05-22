@@ -1,0 +1,204 @@
+.site-hero{
+  position:fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  //height: $height__hero;
+  @include themify($themes){
+    background-color: themed('bg__hero');
+  }
+  &__container{
+    margin:auto;
+    width: 100%;
+    max-width: $width__containers;
+    height:100%;
+
+  }
+
+  &__branch{
+    min-width:200px;
+    height: 50px;
+
+    &-title{
+
+      @include themify($themes){
+        color: themed('tx__title');
+      }
+
+    }
+  }
+
+
+  /**
+   * Site - Menu
+   */
+  &__menus{
+    width:100%;
+    min-width: 300px;
+    //max-width: 400px;
+    margin: 0 10px;
+    &:not(&.fa-center){
+      display: block;
+    }
+
+    /**
+     * Menu - Icons
+     */
+    .menu-icons{
+      position:relative;
+      min-width:100px;
+      width: 100%;
+      height:40px;
+      margin:0 10px 0 5px;
+
+      .site-hero__notification{
+        position:relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin:0 5px;
+
+        &:not(&.disabled){
+          i{
+            @include themify($themes){
+              color: themed('tx__icon-default-dark')
+            }
+          }
+        }
+
+
+      }
+
+      div {
+
+
+        i{
+          font-size: $size__font-hero;
+
+          @include themify($themes){
+            color: themed('tx__icon-default');
+          }
+        }
+
+        &:not(&.disabled){
+          i{
+            @include themify($themes){
+              color: themed('tx__icon-default-dark')
+            }
+          }
+        }
+
+      }
+
+    }
+    /**
+     * Menu - Users
+     */
+    .menu-users{
+      width: 100%;
+      position:relative;
+      height:40px;
+      padding:0 10px;
+
+      .user-active{
+        margin-left: 10px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        position:relative;
+        overflow: hidden;
+        border-radius:50%;
+        img {
+          position:absolute;
+          top:50%;
+          left:50%;
+          width: auto;
+          height: 100%;
+          transform: translate(-50%,-50%);
+
+        }
+
+      }
+      button{
+
+        i{
+          font-size: $size__font-hero;
+        }
+      }
+
+      &:before{
+        content:'';
+        position:absolute;
+        left: 0;
+        top:0;
+        height: 100%;
+        width: 2px;
+
+        @include themify($themes){
+          background: themed('bg__divider');
+        }
+
+      }
+    }
+  }
+
+  /**
+   * search
+   */
+  &__form{
+    height:50px;
+    width:100%;
+    max-width: 100%;
+    min-width: calc(100% - 550px);
+    //min-width: 300px;
+    &-forms{
+      height:100%;
+      width:100%;
+      min-width: 300px;
+
+    }
+  }
+
+  &__input-groups{
+    position:relative;
+    min-height: 30px;
+    height: 100%;
+  }
+  &__input{
+    overflow: hidden;
+    border-radius:10px;
+    //border:1px solid #33333a;
+    outline:none;
+    width:calc(100% - 140px);
+    padding: 2px 120px 2px 20px;
+    height:40px;
+
+    margin:auto;
+
+    @include themify($themes){
+      border:1px solid themed('bg__hero-search-border');
+      background-color: themed('bg__hero-search');
+    }
+
+  }
+  &__input-icon{
+    top:3px;
+    right:1px;
+    outline:none;
+    border-radius:0 9px 9px 0;
+    border:none;
+    width:100px;
+    height:44px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
+    i{
+      font-size: $size__font-hero;
+    }
+
+    @include themify($themes){
+      background-color: darken(themed('bg__hero-search'),5%);
+    }
+  }
+}

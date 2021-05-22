@@ -1,0 +1,19 @@
+.position-abs{
+  position:absolute;
+  &.top-r{
+    top:0;
+    right:0;
+  }
+  &.top-l{
+    top:0;
+    left:0;
+  }
+  &.bot-r{
+    bottom:0;
+    right:0;
+  }
+  &.bot-l{
+    bottom: 0;
+    left:0;
+  }
+}

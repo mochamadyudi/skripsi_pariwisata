@@ -1,0 +1,88 @@
+$themes: (
+        light: (
+                bg__hero :                $material-text-dark-primary,
+                bg__sidebar:              $material-theme-light-card,
+                bg__hero-search :         $material-grey-50,
+                bg__hero-search-border :  $material-grey-200,
+                bg__main :                $material-grey-100,
+                bg__main-default :        $material-grey-400,
+                bg__input:                $material-grey-100,
+                bg__button:               $material-grey-500,
+                bg__button-light:         $material-grey-400,
+                bg__primary:              $material__main-700,
+                bg__primary-light:        $material__main-600,
+                bg__secondary:            $material__main-500,
+                bg__secondary-light:      $material__main-100,
+                bg__success:              $material-green-a400,
+                bg__success-light:        $material-light-green-a100,
+                bg__warn-light:           $material-amber-a200,
+                bg__warn:                 $material-amber-a400,
+                bg__danger:               $material__main-danger,
+                bg__danger-light:         $material__main-danger-dark,
+                bg__divider:              $material-grey-400,
+                color__border-input:      $material-grey-400,
+                tx__title:                $material-grey-800,
+                tx__default:              $material-grey-800,
+                tx__icon-default:         $material-grey-500,
+                tx__icon-default-dark:    $material-grey-800,
+                tx__btn:                  $material-theme-dark-background,
+                tx__btn-light:            $material-grey-50
+        ),
+        dark: (
+                bg__hero : $material-theme-dark-app,
+                bg__hero-search :         $material-grey-400,
+                bg__hero-search-border :  #33333a,
+                bg__sidebar:              $material-theme-dark-card,
+                bg__main :                $material-theme-dark-background,
+                bg__main-default :        $material-grey-800,
+                bg__button: $material-grey-800,
+                bg__button-light: $material-grey-200,
+                bg__primary:              $material__main-700,
+                bg__primary-light:        $material__main-600,
+                bg__secondary:            $material__main-500,
+                bg__secondary-light:      $material__main-100,
+                bg__success:              $material-green-a400,
+                bg__success-light:        $material-light-green-a100,
+                bg__warn-light:           $material-amber-a200,
+                bg__warn:                 $material-amber-a400,
+                bg__danger:               $material__main-danger,
+                bg__danger-light:         $material__main-danger-dark,
+                bg__divider:              $material-grey-300,
+                color__border-input:      $material-grey-100,
+                tx__title:                $material-grey-50,
+                tx__default:              $material-grey-50,
+                tx__icon-default:         $material-grey-50,
+                tx__icon-default-dark:    $material-grey-400,
+                tx__btn:                  $material-grey-200,
+                tx__btn-light:            $material-grey-50
+        )
+
+);
+
+$colors: (
+        primary: #2a2a31
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+.card {
+  @include themify($themes) {
+    background: themed('bg__hero-menu')
+  }
+}

@@ -1,0 +1,97 @@
+/**
+ * @author - Mochamad Yudi Sobari
+ * @desc - Button
+ */
+
+.btn{
+  outline:none;
+  border:none;
+  position:relative;
+  border-radius:5px;
+
+  &.btn-primary{
+    width: 100%;
+    height: 100%;
+    &:not(&.active){
+      background-color:transparent;
+    }
+    @include themify($themes){
+      //padding:5px;
+      background-color: themed('bg__primary');
+    }
+
+    }
+
+  &.btn-auth{
+    position:relative;
+    width: 100px;
+    height: 100%;
+    padding:0 10px;
+    font-weight: bold;
+    @include themify($themes){
+      color: themed('tx__btn-light');
+      //background-color: themed('bg__primary');
+    }
+
+    &:not(&.active){
+
+    }
+
+    &:hover{
+
+      &:before{
+        content:"";
+        position:absolute;
+        top:0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        transition:0.2s;
+        opacity:1;
+        @include themify($themes){
+          //padding:5px;
+          background-color: themed('bg__primary');
+        }
+
+      }
+    }
+
+    &:before{
+      content:"";
+      transition:0.2s;
+      position:absolute;
+      top:0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      //border:1px solid red;
+      border-radius:5px;
+
+      opacity:.8;
+      @include themify($themes){
+        //padding:5px;
+        background-color: themed('bg__primary');
+      }
+
+    }
+
+  }
+
+  &:not(&.active) {
+    i {
+
+      @include themify($themes) {
+        color: themed('tx__btn') !important;
+      }
+    }
+  }
+  i {
+
+    @include themify($themes) {
+      color: themed('tx__btn-light') !important;
+    }
+  }
+
+}

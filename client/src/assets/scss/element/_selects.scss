@@ -1,0 +1,20 @@
+.select__value-container{
+  display: block;
+  .select__multi-value{
+    width: 100%;
+    border-radius:5px;
+    position:relative;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+
+    .select__multi-value__remove{
+      position: absolute;
+      right:0;
+      height: 30px;
+      top:0;
+    }
+
+  }
+}

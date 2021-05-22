@@ -1,0 +1,33 @@
+
+.collapse{
+  display: block;
+  position:relative;
+
+  &-layout{
+    border:1px solid red;
+
+    &__header{
+      border:1px solid blue;
+
+      &-icons{
+
+        width: 30px;
+        height: 30px;
+      }
+
+      &-title{
+
+      }
+
+      &.flex{
+        display: flex;
+        align-items: center;
+      }
+
+    }
+  }
+
+  &.search{
+    border:1px solid blue;
+  }
+}

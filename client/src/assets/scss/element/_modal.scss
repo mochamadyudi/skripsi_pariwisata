@@ -1,0 +1,298 @@
+.modal{
+  display: block;
+  padding:0 10px 10px 10px;
+
+  &:not(&.modal-badge){
+    display: flex;
+    position:fixed;
+    top:0;
+    left: 0;
+  }
+
+  &.modal-badge{
+    display: block;
+    position:absolute;
+    top:60px;
+    //left: -100%;
+    left: 0;
+
+    max-height:400px;
+    width: 100%;
+    min-width: 350px;
+    border-radius:10px;
+
+    @include themify($themes){
+      box-shadow: 0 0 10px themed('bg__main-default');
+      background-color: themed('bg__hero');
+    }
+
+  }
+
+  &-hero{
+    position:relative;
+    display: block;
+    padding:10px 5px;
+    max-height: calc(100% - 20px);
+    height: 100%;
+
+    &__title{
+      display: block;
+      width: 100%;
+
+      .modal-title{
+        width: 100%;
+        font-size: 1em;
+
+        @include themify($themes){
+          color: themed('tx__default')
+        }
+
+      }
+
+      .modal-hero__btn{
+        padding:5px;
+
+        i{
+          font-size: 1.5em;
+
+          @include themify($themes){
+            color: themed('tx__default')
+          }
+        }
+      }
+
+      &.flex{
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &__content{
+      display: block;
+      position:relative;
+      margin:10px 0;
+      //padding: 10px 0;
+      max-height: 340px;
+      min-height: 40px;
+      overflow: auto;
+    }
+  }
+
+
+
+  /**
+   * Modal Popup
+   */
+  &.popup{
+    display: flex;
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height:100vh;
+    z-index: $index__modal;
+
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.modal-badge{
+
+  &:not(&.active){
+    display: none;
+  }
+}
+
+.modal-menus{
+  display: block;
+  //height:400px;
+
+  &__item{
+
+    overflow: hidden;
+    margin:0 10px 10px 0;
+    display: block;
+    min-height: 30px;
+
+    &-itm{
+      height: 70px;
+      border-radius:5px;
+
+      @include themify($themes){
+        background-color: themed('bg__main-default')
+      }
+
+      &.left{
+        min-width: 70px;
+        margin-right: 10px;
+      }
+      &.right{
+        //height: 140px;
+        width: calc(100% - 70px);
+      }
+    }
+
+    &.flex{
+      display: flex !important;
+      //align-items: center;
+
+    }
+
+  }
+}
+.modal-form{
+  display: block;
+  position:relative;
+
+  &__input{
+    position:relative;
+
+    label{
+      @include themify($themes){
+        color: themed('tx__default')
+      }
+    }
+
+    &.groups{
+      margin-bottom: 10px;
+
+    }
+
+    &.input{
+      display: block;
+      border:none;
+      outline:none;
+      height: 40px;
+      width: calc(100% - 20px);
+      padding: 0 10px;
+      border-radius:5px;
+
+      @include themify($themes){
+        background-color: themed('bg__input');
+      }
+    }
+  }
+
+  .btn-submit{
+    width:100%;
+    height: 40px;
+    font-weight: bold;
+    transition:0.2s;
+
+    @include themify($themes){
+      color: themed('tx__btn-light');
+      background-color: themed('bg__primary')
+    }
+
+    &:hover{
+      transition:0.2s;
+      @include themify($themes){
+        color: themed('tx__btn-light');
+        background: lighten(themed('bg__primary-light'),5%);
+      }
+    }
+  }
+}
+
+
+.popup{
+  .modal-popup__layout{
+    position:relative;
+    z-index: 2;
+    height:50vh;
+    min-height: 400px;
+    width: 50vw;
+    min-width: 500px;
+    background:white;
+    border-radius:10px;
+    padding:10px;
+
+
+    &-header{
+      height: 50px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      .popup-title{
+        width: 100%;
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+
+        i{
+
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+        }
+
+      }
+      button{
+        width: 50px;
+        height: 50px;
+        padding:10px;
+
+        font-size: 24px;
+      }
+
+    }
+    &-content{
+      border:1px solid green;
+      width: 100%;
+      max-width: 100%;
+      height: calc(100% - 60px);
+      //max-height: calc(100% - 60px);
+      position:relative;
+      overflow: hidden;
+      display: block;
+      background:#33333a;
+
+    }
+
+
+  }
+
+  .modal-popup__bg-close{
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background:black;
+    opacity: 0.5;
+  }
+}
+
+.map-marker{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  left: -25px;
+  top: -25px;
+
+}
+
+.place{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  left: -10px;
+  top: -10px;
+  //border: 1px solid blue;
+  background: red;
+  color: yellow;
+}

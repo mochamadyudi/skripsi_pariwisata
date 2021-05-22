@@ -1,0 +1,44 @@
+@font-face {
+  font-family: ios;
+  src: url('../../fonts/SF-UI-Display-Regular.otf');
+}
+
+*{
+  padding:0;
+  margin:0;
+  font-family: "Roboto", sans-serif;
+}
+
+ul, li, a{
+  list-style: none;
+  text-decoration:none;
+}
+
+/**
+ * letter spacing
+ */
+a,p,span,pre,label,button{
+  letter-spacing: 0;
+}
+
+button, a {
+  cursor:pointer;
+}
+button{
+  outline:none;
+  border:none;
+  background:transparent;
+}
+
+label{
+  line-height: 1.8em;
+  font-size: 1rem;
+
+}
+
+a{
+  //color: black;
+  &:focus,&:active,&:hover{
+    //color: black;
+  }
+}
